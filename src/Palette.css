@@ -6,7 +6,7 @@
 .Palette-colors{
     height: 90%;
 }
-Palette-footer{
+.Palette-footer{
     background-color: white;
     height: 5vh;
     display: flex;
