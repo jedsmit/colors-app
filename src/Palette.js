@@ -27,7 +27,7 @@ export class Palette extends Component {
         const colorBoxes = colors[level].map(color => (
             <ColorBox
                 background={color[format]}
-                name={color.id}
+                name={color.name}
                 key={color.id}
                 moreUrl={`/palette/${id}/${color.id}`}
                 showLink />
