@@ -54,7 +54,12 @@ transition: 0.5s;
     text-transform: uppercase;
     font-size: 12px;
 }
-
+.light-text {
+    color: white;
+}
+.ColorBox .dark-text {
+    color: rgb(0,0,0,0.75);
+}
 .see-more {
     background: rgba(255,255,255,0.3);
     position: absolute;
