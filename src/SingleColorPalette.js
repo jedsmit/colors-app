@@ -5,7 +5,7 @@ import ColorBox from './ColorBox';
 import Navbar from './Navbar';
 import PaletteFooter from './PaletteFooter';
 import styles from './styles/PaletteStyles';
-import './ColorBox.css'
+
 
 
 
