@@ -27,14 +27,18 @@ const styles = theme => ({
     drawer: {
         width: drawerWidth,
         flexShrink: 0,
+        height: "100vh"
     },
     drawerPaper: {
         width: drawerWidth,
+        display: "flex",
+        alignItems: "center"
     },
     drawerHeader: {
         display: 'flex',
         alignItems: 'center',
-        padding: theme.spacing(0, 1),
+        padding: "0 8px",
+        width: "100%",
         // necessary for content to be below app bar
         ...theme.mixins.toolbar,
         justifyContent: 'flex-end',
@@ -42,7 +46,7 @@ const styles = theme => ({
     content: {
         flexGrow: 1,
         height: "calc(100vh - 64px)",
-        padding: theme.spacing(3),
+        padding: theme.spacing.unit * 3,
         transition: theme.transitions.create('margin', {
             easing: theme.transitions.easing.sharp,
             duration: theme.transitions.duration.leavingScreen,
@@ -56,6 +60,20 @@ const styles = theme => ({
         }),
         marginLeft: 0,
     },
+    container: {
+        width: "90%",
+        height: "100%",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center"
+    },
+    buttons: {
+        width: "100%"
+    },
+    button: {
+        width: "50%"
+    }
 });
 
 
@@ -163,21 +181,29 @@ class NewPaletteForm extends Component {
                         </IconButton>
                     </div>
                     <Divider />
-                    <Typography variant='h4'>Design your palette</Typography>
-                    <div>
-                        <Button variant='contained' color='secondary' onClick={this.clearColors}>
-                            Clear Palette
+                    <div className={classes.container}>
+                        <Typography variant='h4' gutterBottom>Design your palette</Typography>
+                        <div className={classes.buttons}>
+                            <Button className={classes.button} variant='contained' color='secondary' onClick={this.clearColors}>
+                                Clear Palette
                     </Button>
-                        <Button
-                            variant='contained'
-                            color='primary'
-                            disabled={paletteIsFull}
-                            onClick={this.addRandomColor}>
-                            Random Color
+                            <Button
+                                className={classes.button}
+                                variant='contained'
+                                color='primary'
+                                disabled={paletteIsFull}
+                                onClick={this.addRandomColor}>
+                                Random Color
                     </Button>
-                    </div>
-                    <ColorPickerForm palletIsFull={paletteIsFull} addNewColor={this.addNewColor} colors={colors} />
+                        </div>
 
+                        <ColorPickerForm
+                            palletIsFull={paletteIsFull}
+                            addNewColor={this.addNewColor}
+                            colors={colors}
+                        />
+
+                    </div>
                 </Drawer>
                 <main
                     className={clsx(classes.content, {
