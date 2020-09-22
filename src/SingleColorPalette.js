@@ -7,8 +7,6 @@ import PaletteFooter from './PaletteFooter';
 import styles from './styles/PaletteStyles';
 
 
-
-
 export class SingleColorPalette extends Component {
     constructor(props) {
         super(props);
